@@ -5,11 +5,9 @@ pipeline {
     }
     parameters  {
         string(name:"person",description:"person name", defaultValue:"Ali")
-        string(name:"label_method",description:"Choose methods that you want to run", defaultValue:"Choose methods that you want to run")
         booleanParam(name:"Test",description:"Test",defaultValue:true)
         booleanParam(name:"Build",description:"Build",defaultValue:true)
         booleanParam(name:"Deploy",description:"Deploy",defaultValue:true)
-        choice(name: "Choose Pipeline Flow",choices: ['Partial Deploy','Complete Deploy'],description: "Choose Pipeline Flow")
     }
     stages {
         stage('Test') {
@@ -24,7 +22,6 @@ pipeline {
             }
             steps {
                 echo "Building = ${testName}"
-                echo "Parameter Value = ${person}"
             }
         }
         stage('Deploy') {
