@@ -3,16 +3,10 @@ pipeline {
     environment {
         name = 'Test Namee'
     }
-    parameters  {
-        string(name:"person",description:"person name", defaultValue:"Ali")
-        booleanParam(name:"Test",description:"Test",defaultValue:true)
-        booleanParam(name:"Build",description:"Build",defaultValue:true)
-        booleanParam(name:"Deploy",description:"Deploy",defaultValue:true)
-    }
     stages {
         stage('Test') {
             steps {
-                echo "Testing variable = ${name}"
+                echo "Testing variable = tg"
                 echo 'Testing'
             }
         }
@@ -21,7 +15,7 @@ pipeline {
                 testName = 'Test Name2'
             }
             steps {
-                echo "Building = ${testName}"
+                echo "Building = builg"
             }
         }
         stage('Deploy') {
